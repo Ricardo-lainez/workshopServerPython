@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Estudiantes ESPE</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="has-text-centered mb-5">
+                <h1 class="title is-2">Sistema de Clientes</h1>
+                <p class="subtitle is-5">Visualización de Datos</p>
+            </div>
+
+            <div class="level mb-4">
+                <div class="level-left">
+                    <div class="level-item">
+                        <button class="button is-info" id="btnActualizar">Actualizar Datos</button>
+                    </div>
+                </div>
+                <div class="level-right">
+                    <div class="level-item">
+                        <span class="tag is-info is-medium">Total: <strong id="totalCustomers">0</strong></span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loadingDiv" class="has-text-centered" style="padding: 50px;">
+                <progress class="progress is-link" max="100"></progress>
+                <p>Cargando datos...</p>
+            </div>
+
+            <div id="tableDiv" style="display: none;">
+                <div class="table-container">
+                    <table class="table is-striped is-hoverable is-fullwidth">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre Completo</th>
+                                <th>Email</th>
+                                <th>Tipo</th>
+                                <th>Descuento</th>
+                                <th>Venta Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customersBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
