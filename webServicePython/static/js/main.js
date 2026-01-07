@@ -1,4 +1,7 @@
-const API_URL = 'http://localhost:5000/api';
+// Detectar si estamos en local o en producción
+const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:5000/api'
+    : '/api';
 
 // Cargar datos al iniciar
 document.addEventListener('DOMContentLoaded', function() {
