@@ -20,7 +20,7 @@ COLLECTION_NAME = os.getenv('COLLECTION_NAME')
 
 # Validar que las variables estén configuradas
 if not MONGO_URI or not DATABASE_NAME or not COLLECTION_NAME:
-    raise ValueError("Error: Las variables MONGO_URI, DATABASE_NAME y COLLECTION_NAME deben estar configuradas en el archivo .env")
+    raise ValueError("Error: Las variables MONGO_URI, DATABASE_NAME y COLLECTION_NAME deben estar configuradas en las variables de entorno")
 
 # Conectar a MongoDB
 try:
